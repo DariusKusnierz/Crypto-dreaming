@@ -71,12 +71,11 @@ public class DialoguesSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
             dialogueIndex = 0;
             deactiveTalkingIcon();
+            PlayerMovement.instance.enabled = true;
 
             if (canChangeScene)
-            {
                 SceneChanger.instance.launchFadeIn();
-            }
-
+            
             return;
         }
 

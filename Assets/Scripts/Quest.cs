@@ -22,11 +22,17 @@ public class Quest : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             playerAnswerPanel.SetActive(false);
+            PlayerMovement.instance.enabled = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
             CheckPlayerAnswer();
+            PlayerMovement.instance.enabled = true;
+        }
     }
 
     void CheckPlayerAnswer()

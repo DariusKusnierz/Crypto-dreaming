@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Singleton
+    public static PlayerMovement instance;
+    private void Awake()
+    {
+        if(instance == null)
+            instance = this;
+        else
+            Destroy(instance);
+    }
+
+    #endregion
+
+
     [SerializeField] float speed = 0.5f;
     [SerializeField] List<Sprite> movementSprite = new List<Sprite>();
     [SerializeField] Collider2D interractionCollider;

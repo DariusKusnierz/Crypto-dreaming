@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -26,7 +27,10 @@ public class Interaction : MonoBehaviour
         if (canTalk)
             GetComponent<Dialogue>().StartDialogue();
 
-        if(haveQuest)
+        if (haveQuest)
+        {
             answerPanel.SetActive(true);
+            answerPanel.GetComponentInChildren<TMP_InputField>().ActivateInputField();
+        }
     }
 }

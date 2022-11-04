@@ -16,6 +16,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             canInteract = false;
             objectOfInteraction.GetComponent<Interaction>().Interact();
+            PlayerMovement.instance.enabled = false;
         }
     }
 

@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Interaction : MonoBehaviour
 {
     [SerializeField] bool canTalk = false;
+    [SerializeField] bool haveQuest = false;
+    [SerializeField] GameObject answerPanel = null;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +25,8 @@ public class Interaction : MonoBehaviour
         Debug.Log("Interakcja z " + gameObject.name);
         if (canTalk)
             GetComponent<Dialogue>().StartDialogue();
+
+        if(haveQuest)
+            answerPanel.SetActive(true);
     }
 }

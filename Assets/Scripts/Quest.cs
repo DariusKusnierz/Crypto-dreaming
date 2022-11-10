@@ -33,7 +33,6 @@ public class Quest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             CheckPlayerAnswer();
-            PlayerMovement.instance.enabled = true;
         }
     }
 

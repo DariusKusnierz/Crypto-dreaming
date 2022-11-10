@@ -15,6 +15,8 @@ public class Quest : MonoBehaviour
     [SerializeField] Dialogue dialogueToChangeWhenFinished;
     [SerializeField] bool canChangeScene = false;
 
+    bool isCompleted = false;
+
     private void Start()
     {
         playerAnswer = playerAnswerPanel.GetComponentInChildren<TMP_InputField>();
@@ -28,7 +30,7 @@ public class Quest : MonoBehaviour
             PlayerMovement.instance.enabled = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             CheckPlayerAnswer();
             PlayerMovement.instance.enabled = true;
@@ -45,12 +47,26 @@ public class Quest : MonoBehaviour
         if (Equals(playerAnswer.text.ToLower().Trim('\r', '\n').Trim(), "ave cezar"))
             FinishQuest();
         else
+        {
+            playerAnswer.GetComponentsInChildren<TMP_Text>()[1].color = Color.red;
             Debug.Log("Z≥a odpowiedü");
+        }
 
     }
 
     void FinishQuest()
     {
+        isCompleted = true;
+
+        playerAnswer.GetComponentsInChildren<TMP_Text>()[1].color = Color.green;
+
         Debug.Log("Dobra odpowiedü");
+    }
+
+    public void ClearColor()
+    {
+        Color newColor;
+        ColorUtility.TryParseHtmlString("#221C1C", out newColor);
+        playerAnswer.GetComponentsInChildren<TMP_Text>()[1].color = newColor;
     }
 }

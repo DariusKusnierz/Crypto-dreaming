@@ -340,6 +340,7 @@ MonoBehaviour:
   playerAnswer: {fileID: 0}
   dialogueToChangeWhenFinished: {fileID: 0}
   canChangeScene: 0
+  isCompleted: 0
 --- !u!4 &101438371
 Transform:
   m_ObjectHideFlags: 0
@@ -495,9 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd369012773f089429f22e06262a8b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLine:
-  - "Ahhh... Ciekawe ile jeszcze b\u0119dziemy tu siedze\u0107..."
-  - "Zachcia\u0142o mi si\u0119 na wypraw\u0119 wyrusza\u0107..."
+  dialoguePath: []
   isChangingScene: 0
 --- !u!4 &149002503 stripped
 Transform:
@@ -1746,6 +1745,8 @@ GameObject:
   - component: {fileID: 929971556}
   - component: {fileID: 929971555}
   - component: {fileID: 929971557}
+  - component: {fileID: 929971559}
+  - component: {fileID: 929971558}
   m_Layer: 0
   m_Name: tilemap_343
   m_TagString: Untagged
@@ -1846,6 +1847,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.52}
   m_EdgeRadius: 0
+--- !u!114 &929971558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929971554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd369012773f089429f22e06262a8b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePath:
+  - dialogueLine:
+    - "Widz\u0119, \u017Ce szfendasz si\u0119 po obozie bez roboty..."
+    - "S\u0142uchaj, je\u015Bli chcesz si\u0119 st\u0105d zabra\u0107 to pom\xF3\u017C
+      nam wszystkim. Zobacz dosta\u0142em dzi\u015B taki list."
+    - "To s\u0105 rozkazy od samego Cezara, ale problem w tym, \u017Ce jedyna osoba
+      kt\xF3ra wie jak odczytywa\u0107 jego wiadomo\u015Bci, zagin\u0119\u0142a wiele
+      tygodni temu."
+    - "Je\u015Bli jakim\u015B zrz\u0105dzeniem losu uda ci si\u0119 to roszyfrowa\u0107
+      to zapisz wiadomo\u015B\u0107 na tablicy obok."
+    isConnectedWithQuest: 1
+    actualQuest: {fileID: 101438370}
+  - dialogueLine:
+    - "Niewiarygodne!!! Naprawd\u0119 ci si\u0119 uda\u0142o!"
+    - "\u015Awietnie, teraz jak znamy rozkazy mo\u017Cemy nareszcznie si\u0119 st\u0105d
+      ruszy\u0107."
+    isConnectedWithQuest: 0
+    actualQuest: {fileID: 0}
+  isChangingScene: 0
+--- !u!114 &929971559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929971554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e443ca836d0484f84039b9e9131770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTalk: 1
+  isQuest: 0
+  answerPanel: {fileID: 0}
 --- !u!1 &949563003
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,6 +4970,14 @@ PrefabInstance:
     - target: {fileID: 8973911857050143617, guid: c3f5fa2e921d70b4d801158bc25efead, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973911857050143623, guid: c3f5fa2e921d70b4d801158bc25efead, type: 3}
+      propertyPath: dialoguePath.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973911857050143623, guid: c3f5fa2e921d70b4d801158bc25efead, type: 3}
+      propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3f5fa2e921d70b4d801158bc25efead, type: 3}

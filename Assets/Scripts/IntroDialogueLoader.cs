@@ -11,6 +11,6 @@ public class IntroDialogueLoader : MonoBehaviour
 
     void startDialogue()
     {
-        DialoguesSystem.instance.LoadDialogue(gameObject, GetComponent<Dialogue>().dialogueLine, GetComponent<Dialogue>().isChangingScene);
+        DialoguesSystem.instance.LoadDialogue(gameObject, GetComponent<Dialogue>().dialoguePath[0].dialogueLine, GetComponent<Dialogue>().isChangingScene);
     }
 }

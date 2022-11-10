@@ -15,7 +15,7 @@ public class Quest : MonoBehaviour
     [SerializeField] Dialogue dialogueToChangeWhenFinished;
     [SerializeField] bool canChangeScene = false;
 
-    bool isCompleted = false;
+    public bool isCompleted = false;
 
     private void Start()
     {

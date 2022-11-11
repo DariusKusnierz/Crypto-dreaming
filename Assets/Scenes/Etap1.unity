@@ -1851,6 +1851,7 @@ MonoBehaviour:
   canChangeScene: 1
   talkingIcon: {fileID: 913677245}
   interlocutor: {fileID: 0}
+  objectToActive: {fileID: 0}
 --- !u!114 &914443352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,12 +2027,14 @@ MonoBehaviour:
       to zapisz wiadomo\u015B\u0107 na tablicy obok."
     isConnectedWithQuest: 1
     actualQuest: {fileID: 101438370}
+    objectToActivate: {fileID: 1767223208}
   - dialogueLine:
     - "Niewiarygodne!!! Naprawd\u0119 ci si\u0119 uda\u0142o!"
     - "\u015Awietnie, teraz jak znamy rozkazy mo\u017Cemy nareszcznie si\u0119 st\u0105d
       ruszy\u0107."
     isConnectedWithQuest: 0
     actualQuest: {fileID: 0}
+    objectToActivate: {fileID: 0}
   isChangingScene: 0
 --- !u!114 &929971559
 MonoBehaviour:
@@ -4187,7 +4190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1767223209
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4465,7 +4468,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830044464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

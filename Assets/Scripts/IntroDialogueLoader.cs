@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class IntroDialogueLoader : MonoBehaviour
 {
+    public Dialogue dialogue;
+
     void Start()
     {
+        dialogue = GetComponent<Dialogue>();
         startDialogue();
     }
 
     void startDialogue()
     {
-        DialoguesSystem.instance.LoadDialogue(gameObject, GetComponent<Dialogue>().dialoguePath[0].dialogueLine, GetComponent<Dialogue>().isChangingScene);
+        DialoguesSystem.instance.LoadDialogue(gameObject, dialogue.dialoguePath[0].dialogueLine, dialogue.isChangingScene, dialogue.dialoguePath[0].objectToActivate);
     }
 }

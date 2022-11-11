@@ -8,6 +8,7 @@ public class DialoguePath
     public List<string> dialogueLine = new List<string>();
     public bool isConnectedWithQuest = false;
     public Quest actualQuest;
+    public GameObject objectToActivate;
 }
 
 [RequireComponent(typeof(Interaction))]
@@ -36,6 +37,6 @@ public class Dialogue : MonoBehaviour
                 break;
         }
 
-        DialoguesSystem.instance.LoadDialogue(gameObject, dialoguePath[pathIterator].dialogueLine, isChangingScene);
+        DialoguesSystem.instance.LoadDialogue(gameObject, dialoguePath[pathIterator].dialogueLine, isChangingScene, dialoguePath[pathIterator].objectToActivate);
     }
 }

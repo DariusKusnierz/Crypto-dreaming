@@ -26,6 +26,7 @@ public class DialoguesSystem : MonoBehaviour
     [SerializeField] bool canChangeScene = false;
     [SerializeField] GameObject talkingIcon;
     [SerializeField] GameObject interlocutor;
+    [SerializeField] GameObject objectToActive;
 
     List<string> dialogueLine = new List<string>();
     int dialogueIndex = 0;
@@ -68,6 +69,9 @@ public class DialoguesSystem : MonoBehaviour
 
         if(dialogueIndex >= dialogueLine.Count)
         {
+            if(objectToActive != null)
+                objectToActive.SetActive(true);
+
             dialoguePanel.SetActive(false);
             dialogueIndex = 0;
             deactiveTalkingIcon();
@@ -82,11 +86,12 @@ public class DialoguesSystem : MonoBehaviour
         dialogueText.text = dialogueLine[dialogueIndex].ToString();
     }
 
-    public void LoadDialogue(GameObject whoTalk, List<string> dialogue, bool changeScene)
+    public void LoadDialogue(GameObject whoTalk, List<string> dialogue, bool changeScene, GameObject activate)
     {
         interlocutor = whoTalk;
         dialogueLine = dialogue;
         canChangeScene = changeScene;
+        objectToActive = activate;
 
         activeTalkingIcon();
         dialogueText.text = dialogueLine[0].ToString();

@@ -465,6 +465,7 @@ MonoBehaviour:
   canChangeScene: 1
   talkingIcon: {fileID: 1781884657}
   interlocutor: {fileID: 0}
+  objectToActive: {fileID: 0}
 --- !u!1 &171270746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,7 +1874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1402691086
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -1955,14 +1956,14 @@ ParticleSystem:
   m_GameObject: {fileID: 1402691085}
   serializedVersion: 8
   lengthInSec: 0.05
-  simulationSpeed: 0.29
+  simulationSpeed: 0.64
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -7221,6 +7222,7 @@ GameObject:
   - component: {fileID: 2006408127}
   - component: {fileID: 2006408128}
   - component: {fileID: 2006408129}
+  - component: {fileID: 2006408130}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7374,11 +7376,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd369012773f089429f22e06262a8b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueLine:
-  - "Ah... jutro ten egzamin, a ja dalej w lesie z materia\u0142em..."
-  - No dobra to jeszcze raz...
-  - Kryptografia to nauk...
-  - A kryto... a...naliz... aa...
+  dialoguePath:
+  - dialogueLine:
+    - "Eh... jutro ten egzamin, a ja dalej w lesie z materia\u0142em..."
+    - No dobra to jeszcze raz...
+    - Kryptografia to nauk...
+    - A kryto... a...naliz... aa...
+    isConnectedWithQuest: 0
+    actualQuest: {fileID: 0}
+    objectToActivate: {fileID: 1402691085}
   isChangingScene: 1
 --- !u!114 &2006408129
 MonoBehaviour:
@@ -7392,6 +7398,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38a236714f2c5249ad103a5d6f3d643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2006408130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006408122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e443ca836d0484f84039b9e9131770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canTalk: 0
+  isQuest: 0
+  answerPanel: {fileID: 0}
 --- !u!1 &2036071443
 GameObject:
   m_ObjectHideFlags: 0

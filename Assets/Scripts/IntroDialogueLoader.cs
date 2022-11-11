@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IntroDialogueLoader : MonoBehaviour
 {
-    public Dialogue dialogue;
+    Dialogue dialogue;
 
     void Start()
     {

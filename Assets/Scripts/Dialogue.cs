@@ -28,7 +28,10 @@ public class Dialogue : MonoBehaviour
                 break;
 
             if (dialoguePath[pathIterator].actualQuest.isCompleted)
+            {
+                isChangingScene = dialoguePath[pathIterator].actualQuest.canChangeScene;
                 continue;
+            }
             else
                 break;
         }

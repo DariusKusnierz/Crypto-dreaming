@@ -13,7 +13,7 @@ public class Quest : MonoBehaviour
     [SerializeField] GameObject playerAnswerPanel;
     [SerializeField] TMP_InputField playerAnswer;
     [SerializeField] Dialogue dialogueToChangeWhenFinished;
-    [SerializeField] bool canChangeScene = false;
+    public bool canChangeScene = false;
 
     public bool isCompleted = false;
 

@@ -14,4 +14,5 @@ public class TriggerDialogueArea : MonoBehaviour
 
         dialogueToStart.StartDialogue();
     }
+
 }

@@ -21,37 +21,63 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] List<Sprite> movementSprite = new List<Sprite>();
     [SerializeField] Collider2D interractionCollider;
 
-    enum Direction {Up, Down, Left, Right};
+    public enum Direction {Up, Down, Left, Right};
+
+    public Direction playerDirection;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += Vector3.up * 0.25f * speed * Time.deltaTime;
-            changeDirection(Direction.Up);
+            playerDirection = Direction.Up;
+
+            MoveToDirection(playerDirection);
+            ChangeDirection(playerDirection);
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += Vector3.down * 0.25f * speed * Time.deltaTime;
-            changeDirection(Direction.Down);
+            playerDirection = Direction.Down;
+
+            MoveToDirection(playerDirection);
+            ChangeDirection(playerDirection);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * 0.25f * speed * Time.deltaTime;
-            changeDirection(Direction.Left);
+            playerDirection = Direction.Left;
+
+            MoveToDirection(playerDirection);
+            ChangeDirection(playerDirection);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * 0.25f * speed * Time.deltaTime;
-            changeDirection(Direction.Right);
+            playerDirection = Direction.Right;
+
+            MoveToDirection(playerDirection);
+            ChangeDirection(playerDirection);
         }
     }
 
-    void changeDirection(Direction actualDirection)
+    public void MoveToDirection(Direction actualDirection)
+    {
+        Vector3 movementVector = Vector3.zero;
+
+        if(actualDirection == Direction.Up) 
+            movementVector = Vector3.up;
+        else if(actualDirection == Direction.Down)
+            movementVector = Vector3.down;
+        else if (actualDirection == Direction.Left)
+            movementVector = Vector3.left;
+        else if (actualDirection == Direction.Right)
+            movementVector = Vector3.right;
+
+        transform.position += 0.25f * speed * Time.deltaTime * movementVector;
+    }
+
+    void ChangeDirection(Direction actualDirection)
     {
         GetComponent<SpriteRenderer>().sprite = movementSprite[((int)actualDirection)];
         changeColliderOffset(actualDirection);

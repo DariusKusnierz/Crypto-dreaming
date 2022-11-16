@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class DialoguePath
@@ -9,6 +10,8 @@ public class DialoguePath
     public bool isConnectedWithQuest = false;
     public Quest actualQuest;
     public GameObject objectToActivate;
+    
+    public UnityEvent onCompleted;
 }
 
 [RequireComponent(typeof(Interaction))]
@@ -17,11 +20,11 @@ public class Dialogue : MonoBehaviour
     public List<DialoguePath> dialoguePath = new List<DialoguePath>();
     [SerializeField] public bool isChangingScene = false;
 
-
+    int pathIterator = 0;
+    
 
     public void StartDialogue()
     {
-        int pathIterator;
 
         for(pathIterator = 0; pathIterator < dialoguePath.Count; pathIterator++)
         {
@@ -38,5 +41,10 @@ public class Dialogue : MonoBehaviour
         }
 
         DialoguesSystem.instance.LoadDialogue(gameObject, dialoguePath[pathIterator].dialogueLine, isChangingScene, dialoguePath[pathIterator].objectToActivate);
+    }
+
+    public void StartPostCompleteActivity()
+    {
+        dialoguePath[pathIterator].onCompleted.Invoke();
     }
 }

@@ -17,6 +17,8 @@ public class Quest : MonoBehaviour
 
     public bool isCompleted = false;
 
+    Event onCompleted;
+
     private void Start()
     {
         playerAnswer = playerAnswerPanel.GetComponentInChildren<TMP_InputField>();

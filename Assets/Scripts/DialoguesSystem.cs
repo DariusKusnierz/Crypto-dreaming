@@ -75,6 +75,7 @@ public class DialoguesSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
             dialogueIndex = 0;
             deactiveTalkingIcon();
+            interlocutor.GetComponent<Dialogue>().StartPostCompleteActivity();
             PlayerMovement.instance.enabled = true;
 
             if (canChangeScene)

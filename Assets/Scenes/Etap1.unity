@@ -511,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8973911857050143623, guid: c3f5fa2e921d70b4d801158bc25efead, type: 3}
       propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.data[1]
-      value: "Przyk\u0142adowo jeden z przyw\xF3dc\xF3w Rzymu, stowrzy\u0142 szyfr,
+      value: "Przyk\u0142adowo jeden z przyw\xF3dc\xF3w Rzymu, stworzy\u0142 szyfr,
         kt\xF3ry do dzi\u015B jest nazywany jego imieniem."
       objectReference: {fileID: 0}
     - target: {fileID: 8973911857050143623, guid: c3f5fa2e921d70b4d801158bc25efead, type: 3}

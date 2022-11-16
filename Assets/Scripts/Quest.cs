@@ -17,8 +17,6 @@ public class Quest : MonoBehaviour
 
     public bool isCompleted = false;
 
-    Event onCompleted;
-
     private void Start()
     {
         playerAnswer = playerAnswerPanel.GetComponentInChildren<TMP_InputField>();
@@ -45,7 +43,7 @@ public class Quest : MonoBehaviour
         Debug.Log("Odp poprawna: " + answer.ToString());
 
 
-        if (Equals(playerAnswer.text.ToLower().Trim('\r', '\n').Trim(), "ave cezar"))
+        if (Equals(playerAnswer.text.ToLower().Trim('\r', '\n').Trim(), answer))
             FinishQuest();
         else
         {

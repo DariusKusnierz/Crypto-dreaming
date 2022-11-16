@@ -9,10 +9,10 @@ public class IntroDialogueLoader : MonoBehaviour
     void Start()
     {
         dialogue = GetComponent<Dialogue>();
-        startDialogue();
+        StartDialogue();
     }
 
-    void startDialogue()
+    void StartDialogue()
     {
         DialoguesSystem.instance.LoadDialogue(gameObject, dialogue.dialoguePath[0].dialogueLine, dialogue.isChangingScene, dialogue.dialoguePath[0].objectToActivate);
     }

@@ -8013,6 +8013,7 @@ MonoBehaviour:
   - {fileID: 1269299777, guid: 6cc2d1ac46673f94d927b8735a60f6cf, type: 3}
   - {fileID: -678950444, guid: 6cc2d1ac46673f94d927b8735a60f6cf, type: 3}
   interractionCollider: {fileID: 1621308834}
+  playerDirection: 0
 --- !u!212 &1218975780
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11719,6 +11720,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 593587926969868694, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 593587926969868694, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 593587926969868694, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.34
+      objectReference: {fileID: 0}
     - target: {fileID: 2663543127625035061, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
       propertyPath: dialogueToStart
       value: 
@@ -15413,6 +15426,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 593587926969868694, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 593587926969868694, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 593587926969868694, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 593587926969868694, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 2663543127625035061, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
       propertyPath: dialogueToStart
       value: 
@@ -15423,7 +15452,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3272819296595128776, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
       propertyPath: m_Size.y
-      value: 1.13
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272819296595128776, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bc2999cfe7416a4e990450486a16c3c, type: 3}

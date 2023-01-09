@@ -274,9 +274,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3134779100945610540, guid: ba1e853239cdd284ba3f35bf6d17ef2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221844060126439885, guid: ba1e853239cdd284ba3f35bf6d17ef2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4292743159007708032, guid: ba1e853239cdd284ba3f35bf6d17ef2a, type: 3}
       propertyPath: m_Name
       value: MiddleWallWindowed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989154421099805642, guid: ba1e853239cdd284ba3f35bf6d17ef2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033446851533095444, guid: ba1e853239cdd284ba3f35bf6d17ef2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1e853239cdd284ba3f35bf6d17ef2a, type: 3}

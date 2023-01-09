@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -67,5 +68,22 @@ public class Quest : MonoBehaviour
         Color newColor;
         ColorUtility.TryParseHtmlString("#221C1C", out newColor);
         playerAnswer.GetComponentsInChildren<TMP_Text>()[1].color = newColor;
+    }
+
+    
+    public void CheckNumberTyping()
+    {
+        Debug.Log("Sprawdzam czy jest liczba");
+        var regex = "[0-9]";
+        if (Regex.IsMatch(playerAnswer.text, regex))
+        {
+            Debug.Log("LICZBA!");
+            playerAnswer.text = playerAnswer.text.Remove(playerAnswer.text.Length - 1);
+        }
+    }
+
+    public void SetComplete(bool completed)
+    {
+        isCompleted = completed;
     }
 }

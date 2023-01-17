@@ -21,8 +21,8 @@ public class Interaction : MonoBehaviour
         if (isQuest)
         {
             answerPanel.SetActive(true);
-            answerPanel.GetComponentInChildren<TMP_InputField>().ActivateInputField();
             PlayerMovement.instance.enabled = false;
+            answerPanel.GetComponentInChildren<TMP_InputField>().ActivateInputField();
         }
 
         onInteracted.Invoke();

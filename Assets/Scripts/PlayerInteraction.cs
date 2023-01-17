@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class PlayerInteraction : MonoBehaviour
 {
-    GameObject objectOfInteraction;
+    Interaction objectOfInteraction;
     bool canInteract = false;
 
     void Update()
@@ -15,8 +15,10 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             canInteract = false;
-            objectOfInteraction.GetComponent<Interaction>().Interact();
-            PlayerMovement.instance.enabled = false;
+            objectOfInteraction.Interact();
+
+            if(objectOfInteraction.canTalk || objectOfInteraction.isQuest)
+                PlayerMovement.instance.enabled = false;
         }
     }
 
@@ -24,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (other.GetComponent<Interaction>())
         {
-            objectOfInteraction = other.gameObject;
+            objectOfInteraction = other.GetComponent<Interaction>();
             canInteract = true;
         }
     }

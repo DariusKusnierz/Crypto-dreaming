@@ -7,8 +7,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class Interaction : MonoBehaviour
 {
-    [SerializeField] bool canTalk = false;
-    [SerializeField] bool isQuest = false;
+    [SerializeField] public bool canTalk = false;
+    [SerializeField] public bool isQuest = false;
     [SerializeField] GameObject answerPanel = null;
 
     public UnityEvent onInteracted;

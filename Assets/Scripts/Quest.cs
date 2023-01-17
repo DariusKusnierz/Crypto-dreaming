@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Quest : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Quest : MonoBehaviour
     public bool canChangeScene = false;
 
     public bool isCompleted = false;
+
+    public UnityEvent OnCompleted;
 
     private void Start()
     {
@@ -59,7 +62,7 @@ public class Quest : MonoBehaviour
         isCompleted = true;
 
         playerAnswer.GetComponentsInChildren<TMP_Text>()[1].color = Color.green;
-
+        OnCompleted?.Invoke();
         Debug.Log("Dobra odpowiedü");
     }
 

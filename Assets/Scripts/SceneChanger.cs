@@ -20,7 +20,7 @@ public class SceneChanger : MonoBehaviour
 
     #endregion
 
-    [SerializeField] Image curtain;
+    [SerializeField] public Image curtain;
     [SerializeField] string nextScene;
 
     private void Start()

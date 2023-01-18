@@ -13719,6 +13719,7 @@ GameObject:
   - component: {fileID: 1645057355}
   - component: {fileID: 1645057358}
   - component: {fileID: 1645057357}
+  - component: {fileID: 1645057359}
   m_Layer: 0
   m_Name: Enigma
   m_TagString: Untagged
@@ -13837,6 +13838,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
+--- !u!114 &1645057359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645057354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd716473a5d6ee48955fbea39619467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  column: 0
+  row: 0
+  directionUpDown: 0
+  directionLeftRight: 0
+  selector: {fileID: 1638099320}
+  answers: []
 --- !u!1 &1660836899
 GameObject:
   m_ObjectHideFlags: 0
@@ -13978,7 +13997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.data[0].isConnectedWithQuest
@@ -13986,29 +14005,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.data[0]
-      value: "Halt! Potrzebuj\u0119 twojej pomocy \u017Co\u0142nierzu!"
+      value: "Witamy nowego cz\u0142onka zespo\u0142u!"
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.data[1]
-      value: "Ci francuzi nie daj\u0105 nam spokoju, musisz przekaza\u0107 tajn\u0105
-        wiadomo\u015B\u0107 do naszego sztabu polowego."
+      value: "Nazywam si\u0119 Alan Turing, i jestem szefem tego przedsi\u0119wzi\u0119cia."
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.data[2]
-      value: "Nasz agent jest gdzie\u015B na p\xF3\u0142noc st\u0105d, no przeka\u017Ce
-        ci co masz zanie\u015B\u0107."
+      value: "Przed nami nielada wyzwanie, ot\xF3\u017C przechwycili\u015Bmy tajn\u0105
+        wiadomo\u015B\u0107 pomi\u0119dzy obozami Pa\u0144stw Osi."
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.data[3]
-      value: "A teraz odmaszerowa\u0107.  Schnell! Schnell!"
+      value: "Naszym zadaniem jest jak najszybsze rozszyfrowanie tej wiadomo\u015Bci
+        i ty nam w tym pomo\u017Cesz."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.data[4]
+      value: "Spr\xF3buj dopasowa\u0107 wszystkie parametry w Enigmie. Troch\u0119
+        u\u0142atwi\u0142em ci ju\u017C prac\u0119 i dostosowa\u0142em ten konkretny
+        egzemplarz w taki spos\xF3b, gdy znajdziesz dobr\u0105 kombinacj\u0119, to
+        za\u015Bwieci si\u0119 lampka przy danym wierszu."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[0].dialogueLine.Array.data[5]
+      value: "Gdyby ci si\u0119 uda\u0142o, to niezw\u0142ocznie mnie o tym powiadom.
+        Powodzenia i pami\u0119taj... \u015Awiat na nas liczy!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.data[0]
+      value: Eureka! Mamy to!
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.data[1]
+      value: "Ju\u017C przekazuj\u0119 roszyfrowan\u0105 wiadomo\u0107 naszym s\u0142u\u017Cbom.
+        Chyba jednak wygramy t\u0119 wojn\u0119, a to wszystko dzi\u0119ki twojej
+        pomocy!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.data[2]
+      value: "Przed nami nielada wyzwanie, ot\xF3\u017C przechwycili\u015Bmy tajn\u0105
+        wiadomo\u015B\u0107 pomi\u0119dzy obozami Pa\u0144stw Osi."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.data[3]
+      value: "Naszym zadaniem jest jak najszybsze rozszyfrowanie tej wiadomo\u015Bci
+        i ty nam w tym pomo\u017Cesz."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.data[4]
+      value: "Spr\xF3buj dopasowa\u0107 wszystkie parametry w Enigmie. Troch\u0119
+        u\u0142atwi\u0142em ci ju\u017C prac\u0119 i dostosowa\u0142em ten konkretny
+        egzemplarz w taki spos\xF3b, gdy znajdziesz dobr\u0105 kombinacj\u0119, to
+        za\u015Bwieci si\u0119 lampka przy danym wierszu."
+      objectReference: {fileID: 0}
+    - target: {fileID: 9214190671481209115, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
+      propertyPath: dialoguePath.Array.data[1].dialogueLine.Array.data[5]
+      value: "Gdyby ci si\u0119 uda\u0142o, to niezw\u0142ocznie mnie o tym powiadom.
+        Powodzenia i pami\u0119taj... \u015Awiat na nas liczy!"
       objectReference: {fileID: 0}
     - target: {fileID: 9214190671481209118, guid: d539e2774a4198544a5daf2806a31a59, type: 3}
       propertyPath: m_Sprite
@@ -19328,7 +19391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2133761219
 RectTransform:
   m_ObjectHideFlags: 0

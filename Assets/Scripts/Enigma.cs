@@ -2,6 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+[System.Serializable]
+public class RowGear
+{
+    public List<TMP_Text> GearTexts = new List<TMP_Text>();
+}
 
 public class Enigma : MonoBehaviour
 {
@@ -9,12 +17,32 @@ public class Enigma : MonoBehaviour
     public bool directionUpDown, directionLeftRight;
     public RectTransform selector;
     public List<string> answers = new List<string>();
+    public int[][] gear = new int[4][];
+    public char[] alphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'U', 'P', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z' };
+    public List<RowGear> rowGears = new List<RowGear>();
+    public List<Image> lights = new List<Image>();
+
+    public Quest actualQuest;
+
+    Color lightOn = new Color(1f, 0.11f, 0.11f);
+    Color lightOff = new Color(0.6f, 0.14f, 0.14f);
 
     // Start is called before the first frame update
     void Start()
     {
         column = 1;
-        row = 3;
+        row = 1;
+
+        for(int i = 0; i < 4; i++)
+        {
+            gear[i] = new int[4];
+            
+            for (int j = 1; j < 4; j++)
+                gear[i][j] = 1;
+        }
+            
+
+
     }
 
     // Update is called once per frame
@@ -25,13 +53,19 @@ public class Enigma : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             directionLeftRight = false;
-            ChangeValue();
+            if (column != 2)
+                ChangeValue(true);
+            else
+                ChangeValue(false);
             return;
         }
         if(Input.GetKeyDown(KeyCode.D))
         {
             directionLeftRight = true;
-            ChangeValue();
+            if (column != 2)
+                ChangeValue(true);
+            else
+                ChangeValue(false);
             return;
         }
         if(Input.GetKeyDown(KeyCode.W))
@@ -66,8 +100,8 @@ public class Enigma : MonoBehaviour
     private void ChangeSelectorAnchors()
     {
         //selector change anchor and clear PosX PosY
-        selector.anchorMin = new Vector2(column / 2f - 0.5f, row / 2f - 0.5f);
-        selector.anchorMax = new Vector2(column / 2f - 0.5f, row / 2f - 0.5f);
+        selector.anchorMin = new Vector2(column / 2f - 0.5f, Mathf.Abs(row - 3f) / 2f);
+        selector.anchorMax = new Vector2(column / 2f - 0.5f, Mathf.Abs(row - 3f) / 2f);
         selector.anchoredPosition = Vector2.zero;
     }
 
@@ -80,21 +114,62 @@ public class Enigma : MonoBehaviour
     private void ChangeRow()
     {
         if (directionUpDown)
-            row++;
+            row = Mathf.Clamp(--row, 1, 3);
         else
-            row--;
+            row = Mathf.Clamp(++row, 1, 3);
         ChangeSelectorAnchors();
     }
 
-    void ChangeValue()
+    void ChangeValue(bool isNumeric)
     {
         //zmiana wartoœci zêbatki
+        if (directionLeftRight)
+        {
+            gear[row][column]++;
+            if (isNumeric && gear[row][column] > 9)
+                gear[row][column] = 1;
+            if (!isNumeric && gear[row][column] > 23)
+                gear[row][column] = 0;
+        }
+        else
+        {
+            gear[row][column]--;
+            if (isNumeric && gear[row][column] < 1)
+                gear[row][column] = 9;
+            if (!isNumeric && gear[row][column] < 1)
+                gear[row][column] = 23;
+        }
+
+        if(isNumeric)
+            rowGears[row].GearTexts[column].text = gear[row][column].ToString();
+        else
+            rowGears[row].GearTexts[column].text = alphabet[gear[row][column]].ToString();
+
         VerifyRow();
     }
 
     private void VerifyRow()
     {
+        string rowText = "";
+        for (int i = 1; i < 4; i++)
+        {
+            rowText += rowGears[row].GearTexts[i].text;
+        }
 
-        throw new NotImplementedException();
+        if (rowText.Equals(answers[row]))
+        {
+            lights[row].color = lightOn;
+            VerifyCompletedQuest();
+        }
+        else
+            lights[row].color = lightOff;
+
+        
+    }
+
+    private void VerifyCompletedQuest()
+    {
+        if (lights[1].color == lightOn && lights[2].color == lightOn && lights[3].color == lightOn)
+            actualQuest.isCompleted = true;
     }
 }

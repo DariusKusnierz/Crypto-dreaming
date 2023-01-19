@@ -30,6 +30,7 @@ public class SceneChanger : MonoBehaviour
 
     public void launchFadeIn()
     {
+        curtain.gameObject.SetActive(true);
         StartCoroutine(fadeIn());
     }
 
@@ -56,5 +57,11 @@ public class SceneChanger : MonoBehaviour
             //curtain.color = Color.Lerp(new Color(0,0,0,0), colorToFade, timeToFade);
             yield return new WaitForSeconds(0.1f);
         }
+        curtain.gameObject.SetActive(false);
+    }
+
+    public void CloseAplication()
+    {
+        Application.Quit();
     }
 }

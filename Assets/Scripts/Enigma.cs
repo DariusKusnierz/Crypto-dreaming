@@ -18,7 +18,7 @@ public class Enigma : MonoBehaviour
     public RectTransform selector;
     public List<string> answers = new List<string>();
     public int[][] gear = new int[4][];
-    public char[] alphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'U', 'P', 'R', 'S', 'T', 'W', 'X', 'Y', 'Z' };
+    public char[] alphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
     public List<RowGear> rowGears = new List<RowGear>();
     public List<Image> lights = new List<Image>();
 
@@ -128,7 +128,7 @@ public class Enigma : MonoBehaviour
             gear[row][column]++;
             if (isNumeric && gear[row][column] > 9)
                 gear[row][column] = 1;
-            if (!isNumeric && gear[row][column] > 23)
+            if (!isNumeric && gear[row][column] > 25)
                 gear[row][column] = 0;
         }
         else
@@ -137,7 +137,7 @@ public class Enigma : MonoBehaviour
             if (isNumeric && gear[row][column] < 1)
                 gear[row][column] = 9;
             if (!isNumeric && gear[row][column] < 1)
-                gear[row][column] = 23;
+                gear[row][column] = 25;
         }
 
         if(isNumeric)
